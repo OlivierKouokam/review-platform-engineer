@@ -1,13 +1,15 @@
+global:
+  imageRegistry: docker.io
 services:
   registry: salaboy
   tag: v1.0.0
-  frontend: 
+  frontend:
     image: frontend-go-1739aa83b5e69d4ccb8a5615830ae66c
-  agenda: 
-    image: agenda-service-0967b907d9920c99918e2b91b91937b3 
-  c4p: 
+  agenda:
+    image: agenda-service-0967b907d9920c99918e2b91b91937b3
+  c4p:
     image: c4p-service-a3dc0474cbfa348afcdf47a8eee70ba9
-  notifications: 
+  notifications:
     image: notifications-service-0e27884e01429ab7e350cb5dff61b525
 install:
   infrastructure: true
@@ -15,7 +17,8 @@ install:
 postgresql:
   image:
     debug: true
-  primary: 
+    repository: bitnamilegacy/postgresql
+  primary:
     persistence:
       size: "1Gi"
     initdb:
@@ -24,14 +27,18 @@ postgresql:
       scriptsConfigMap: c4p-init-sql
   global:
     postgresql:
-      auth: 
+      auth:
         postgresPassword: postgres
-redis: 
+redis:
+  image:
+    repository: bitnamilegacy/redis
   architecture: standalone
   master:
     persistence:
       size: "1Gi"
-kafka: 
+kafka:
+  image:
+    repository: bitnamilegacy/kafka
   persistence:
     size: "1Gi"
   provisioning:
