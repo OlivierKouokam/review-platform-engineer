@@ -29,7 +29,7 @@ kubectl get pods
 
 # Let's deploy our Conference Application
 
-helm install conference oci://ghcr.io/diranetafen/conference-app --version v1.0.0 -f app-values.yaml
+helm install conference oci://ghcr.io/olivierkouokam/conference-app --version v1.0.0 -f app-values.yaml
 kubectl get po
 
 # check that the app work as expected
