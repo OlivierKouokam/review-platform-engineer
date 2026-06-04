@@ -3,12 +3,11 @@ kind: Ingress
 metadata:
   name: conference-app-frontend-ingress
   namespace: default
-  annotations:
-    nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   ingressClassName: nginx
   rules:
-  - http:
+  - host: conferenceapp.local
+    http:
       paths:
       - path: /
         pathType: Prefix
