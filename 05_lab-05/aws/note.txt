@@ -58,7 +58,7 @@ kubectl describe cluster.kafka.aws.upbound.io  kafka-cluster
 
 # Make sure to fill in the commented out aspects of the yaml file based off values from newly created AWS infrastructure.
 
-helm install conference oci://ghcr.io/diranetafen/conference-app --version v1.0.0 -f app-values.yaml
+helm install conference oci://ghcr.io/<your github username>/conference-app --version v1.0.0 -f app-values.yaml
 kubectl get po
 
 # delete app
