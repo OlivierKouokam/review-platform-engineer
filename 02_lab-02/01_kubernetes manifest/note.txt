@@ -5,7 +5,7 @@ cd 00_postgresql/
 kubectl apply -f .
 kubectl get po
 cd ../01_kafka/
-kubectl apply -f
+kubectl apply -f .
 kubectl get po
 cd ../02_redis/
 kubectl apply -f .

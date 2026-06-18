@@ -23,12 +23,20 @@ spec:
           rollbackLimit: 3
           forProvider:
             namespace: default
+            # chart:
+            #   name: redis
+            #   repository: https://charts.bitnami.com/bitnami
+            #   version: "17.11.3"
             chart:
               name: redis
-              repository: https://charts.bitnami.com/bitnami
-              version: "17.11.3"
+              repository: oci://registry-1.docker.io/bitnamicharts
+              version: 17.11.3
             values:
+              image:
+                repository: redis
               architecture: standalone
+              global:
+                imageRegistry: docker.io/bitnamilegacy
           providerConfigRef:
             name: default
       patches:

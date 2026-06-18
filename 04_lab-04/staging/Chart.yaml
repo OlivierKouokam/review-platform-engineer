@@ -8,3 +8,4 @@ dependencies:
 - name: conference-app
   version: v1.0.0
   repository: oci://ghcr.io/diranetafen
+  

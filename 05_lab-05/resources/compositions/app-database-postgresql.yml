@@ -23,12 +23,17 @@ spec:
           rollbackLimit: 3
           forProvider:
             namespace: default
+            # chart:
+            #   name: postgresql
+            #   repository: https://charts.bitnami.com/bitnami
+            #   version: "12.5.9"
             chart:
               name: postgresql
-              repository: https://charts.bitnami.com/bitnami
-              version: "12.5.9"
+              repository: oci://registry-1.docker.io/bitnamicharts
+              version: 12.5.9
             values:
               image:
+                repository: postgresql
                 debug: true
               primary: 
                 initdb:
@@ -36,6 +41,7 @@ spec:
                   password: postgres
                   scriptsConfigMap: c4p-init-sql
               global:
+                imageRegistry: docker.io/bitnamilegacy
                 postgresql:
                   auth: 
                     postgresPassword: postgres

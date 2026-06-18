@@ -23,10 +23,19 @@ spec:
           rollbackLimit: 3
           forProvider:
             namespace: default
+            # chart:
+            #   name: kafka
+            #   repository: https://charts.bitnami.com/bitnami
+            #   version: "22.1.5"
             chart:
               name: kafka
-              repository: https://charts.bitnami.com/bitnami
-              version: "22.1.5"
+              repository: oci://registry-1.docker.io/bitnamicharts
+              version: 22.1.5
+            values:
+              image:
+                repository: kafka
+              global:
+                imageRegistry: docker.io/bitnamilegacy
           providerConfigRef:
             name: default
       patches:
