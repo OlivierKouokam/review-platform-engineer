@@ -33,6 +33,7 @@ spec:
               version: 12.5.9
             values:
               image:
+                repository: postgresql
                 debug: true
               primary: 
                 initdb:
