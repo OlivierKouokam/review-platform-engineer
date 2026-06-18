@@ -1,7 +1,7 @@
 apiVersion: eazytraining.io/v1alpha1
 kind: Database
 metadata:
-  name: my-db-keyavalue
+  name: my-db-keyvalue
 spec:
   compositionSelector:
     matchLabels:
