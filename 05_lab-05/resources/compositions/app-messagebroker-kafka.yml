@@ -31,6 +31,9 @@ spec:
               name: kafka
               repository: oci://registry-1.docker.io/bitnamicharts
               version: 22.1.5
+            values:
+              global:
+                imageRegistry: docker.io/bitnamilegacy
           providerConfigRef:
             name: default
       patches:
