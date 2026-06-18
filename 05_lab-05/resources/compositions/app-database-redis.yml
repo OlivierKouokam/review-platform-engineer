@@ -32,6 +32,8 @@ spec:
               repository: oci://registry-1.docker.io/bitnamicharts
               version: 17.11.3
             values:
+              image:
+                repository: redis
               architecture: standalone
               global:
                 imageRegistry: docker.io/bitnamilegacy
